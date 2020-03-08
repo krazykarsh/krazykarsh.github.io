@@ -1,1 +1,404 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Zilla Slab' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+  <title>Pricing</title>
+  <style>
+    body{
+      font-family: 'Lato',sans-serif;
+    }
+    .top-banner{
+      background-image: url("./top_background.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    .top-banner div{
+      font-family: "Zilla Slab",serif;
+      width: 800px;
+      padding: 50px;
+    }
+    .cards-row{
+      display: flex;
+      justify-content: center;/*space-evenly;*/
+      background-color: #e6e6e6;
+      align-items: center;
+      padding: 40px;
+      border-bottom: 2px solid #d9d9d9;
+    }
+    .card{
+      width: 20%;
+      text-align: center;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+      border-radius: 2px;
+      background-color: white;
+      margin-top: -70px;
+      margin-left: 7px;
+      margin-right: 7px;
+    }
+    .card:hover {
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+    .price-row{
+      margin-top: 20px;
+    }
+    .price{
+      font-size: 2.5em;
+    }
+    .card-header{
+      color: white;
+      border-radius: 2px 2px 0 0;
+      padding: 15px;
+    }
+    .card-header-dark-blue{
+      background-color: #193048;
+      border-bottom: 3px solid #6797cb;
+    }
+    .card-header-dark-green{
+      background-color: #0d1926;
+      border-bottom: 3px solid red;
+    }
+    .card-features > div{
+      padding: 5px 10px;
+      font-size: 0.9em;
+    }
+    .bold-text{
+      font-weight: bold;
+    }
+    .light-gray-text{
+      color: #999999;
+    }
+    .dark-gray-text{
+      color: #808080;
+    }
+    .card-compare{
+      color: #4db8ff;
+      font-size: .9em;
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+    .plan-row > h2, .footer-block>h2{
+      color: #4db8ff;
+      text-align: center;
+    }
+    table{
+      margin: 40px auto;
+      border-collapse: separate;
+      table-layout: fixed;
+      border-spacing: 20px 0;
+    }
+    td, th{
+      padding: 10px;
+      height: 30px;
+    }
+    .footer-block{
+      background-color: #0a3356;
+      border-top: 4px solid #051b2e;
+      text-align: center;
+      padding: 40px;
+      color: white;
+    }
+    .fa-check{
+      color: green;
+    }
+    .tool-tip{
+      position: relative;
+      display: inline-block;
+    }
+    .tool-tip:hover{
+      color: #4db8ff;
+    }
+    .tool-tip[title]:hover::after{
+      content: attr(title);
+      position: absolute;
+      width: 15em;
+      background-color: black;
+      color: #fff;
+      border-radius: 4px;
+      padding: 1em;
+      font-size: 0.45em;
+      left: 150%;
+      font-family: 'Lato',sans-serif;
+      z-index: 1;
+    }
+    .plan-row-body{
+      color: #808080;
+      border-bottom: 1px solid #999999;
+      padding: 20px;
+    }
+    .plan-row-body:hover{
+      color: black;
+      border-bottom: 1px solid #4db8ff;
+    }
+    .plan-row-body-sub-heading{
+      color: #4db8ff;
+    }
+    .plan-row-header{
+      color: #595959;
+      font-weight: bold;
+      font-size: 1.1em;
+      position: relative;
+      border-radius: 4px 4px 0 0;
+    }
+    .box-shadow-add{
+      box-shadow: 0 8px 6px -8px #999999;
+      z-index: 10;
+      -moz-box-shadow: 0 8px 6px -8px #999999;
+      -webkit-box-shadow: 0 8px 6px -8px #999999;
+    }
+    .plan-compare-topic, .plan-compare-topic-blue{
+      width: 40%;
+    }
+    .plan-compare-basic, .plan-compare-enterprise{
+      width: 20%;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+    .plan-compare-pro{
+      width: 20%;
+      background-color: #d9d9d9;
+      text-align: center;
+    }
+    .last-row, .last-row:hover{
+      border-bottom: none;
+      height: 10px;
+    }
+    .last-row>td{
+      border-radius: 0 0 4px 4px;
+    }
+    .plan-row-header>th{
+      border-radius: 4px 4px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-banner">
+      <div>
+        <h2>Get Started with your alumni network</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolores, ut architecto porro dignissimos, quisquam pariatur reprehenderit numquam qui at consequuntur enim quos nihil ab aliquam ipsa? Consequuntur, ea id!</p>
+      </div>
+    </div>
+    <div class="cards-row">
+      <div class="card">
+        <div class="card-header card-header-dark-blue">Basic</div>
+        <div class="card-price">
+          <div class="price-row"><span class="price">$ 111</span>/month</div>
+          <p class="light-gray-text">billed annualy</p>
+          <p><strong>for 1111 registered users</strong><br>
+            <span class="light-gray-text">+ $11 for 1k extra</spam>
+          </p>
+        </div>
+        <div class="card-features">
+          <div class="bold-text">Features</div>
+          <hr>
+          <div class="dark-gray-text">Full Fledged Website</div>
+          <hr>
+          <div class="dark-gray-text">Hosting + Maintainance + Security</div>
+          <hr>
+          <div class="dark-gray-text">Email Support</div>
+          <hr>
+        </div>
+        <div class="card-compare">Compare plans</div>
+      </div>
+      <div class="card">
+        <div class="card-header card-header-dark-green">
+          Pro
+        </div>
+        <div class="card-price">
+          <div class="price-row"><span class="price">$ 222</span>/month</div>
+          <p class="light-gray-text">billed annualy</p>
+          <p><strong>for 2222 registered users</strong><br>
+            <span class="light-gray-text">+ $22 for 1k extra</spam>
+          </p>
+        </div>
+        <div class="card-features">
+          <div class="bold-text">All Features in Basic, plus</div>
+          <hr>
+          <div class="dark-gray-text">Mobile Apps</div>
+          <hr>
+          <div class="dark-gray-text">Paid Marketing Campaigns</div>
+          <hr>
+          <div class="dark-gray-text">Phone Support</div>
+          <hr>
+        </div>
+        <div class="card-compare">Compare plans</div>
+      </div>
+      <div class="card">
+        <div class="card-header card-header-dark-blue">
+          Enterprise
+        </div>
+        <div class="card-price">
+          <div class="price-row"><span class="price">$ 333</span>/month</div>
+          <p class="light-gray-text">billed annualy</p>
+          <p><strong>for 3333 registered users</strong><br>
+            <span class="light-gray-text">+ $33 for 1k extra</spam>
+          </p>
+        </div>
+        <div class="card-features">
+          <div class="bold-text">All Features in Pro, plus</div>
+          <hr>
+          <div class="dark-gray-text">Content Migration from old website</div>
+          <hr>
+          <div class="dark-gray-text">Customization</div>
+          <hr>
+          <div class="dark-gray-text">Dedicated support manager</div>
+          <hr>
+        </div>
+        <div class="card-compare">Compare plans</div>
+      </div>
+    </div>
+    <div class="plan-row">
+      <h2>Plan Comparison</h2>
+      <table>
+        <thead>
+          <tr class="plan-row-header box-shadow-add">
+            <th class="plan-compare-topic"></th>
+            <th class="plan-compare-basic">Basic</th>
+            <th class="plan-compare-pro">Pro</th>
+            <th class="plan-compare-enterprise">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="plan-row-body-sub-heading">
+            <td class="plan-compare-topic-blue">Pricing</td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Registered User Limit <i class="fa fa-question-circle-o fa-2x light-gray-text tool-tip pull-right" title="Numbers of user that can be registered"></i></td>
+            <td class="plan-compare-basic">1111</td>
+            <td class="plan-compare-pro">2222</td>
+            <td class="plan-compare-enterprise">3333</td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Additional 1k User cost</td>
+            <td class="plan-compare-basic">$11</td>
+            <td class="plan-compare-pro">$22</td>
+            <td class="plan-compare-enterprise">$33</td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Create and manage events</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Create and manage fundraising projects</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body-sub-heading spaced-row">
+            <td class="plan-compare-topic-blue">Full Fledged website</td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Free transaction on payment gateway</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Social media integration for alumni profiles</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Powerful search tools</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Masked emailing among users <i class="fa fa-question-circle-o fa-2x light-gray-text tool-tip pull-right" title="Allow users to contact other alumni with revealing their email IDs"></i></td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Dynamic email groups</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Career Center</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Photo gallery, Alumni needs, Stories</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Mobile compatible website</td>
+            <td class="plan-compare-basic"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Mobile apps</td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"><i class="fa fa-check"></i></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Customer Support</td>
+            <td class="plan-compare-basic">email</td>
+            <td class="plan-compare-pro">phone + email</td>
+            <td class="plan-compare-enterprise">phone + email</td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Data migration from old alumni website <i class="fa fa-question-circle-o fa-2x light-gray-text tool-tip pull-right" title="Utilise previous saved data and migrate to new platform"></i></td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Customisation <i class="fa fa-question-circle-o fa-2x light-gray-text tool-tip pull-right" title="Allow site Customization"></i></td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body">
+            <td class="plan-compare-topic">Alumni relationship associate <i class="fa fa-question-circle-o fa-2x light-gray-text tool-tip pull-right" title="Provide technical support agent"></i></td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"><i class="fa fa-check"></i></td>
+          </tr>
+          <tr class="plan-row-body last-row">
+            <td class="plan-compare-topic"></td>
+            <td class="plan-compare-basic"></td>
+            <td class="plan-compare-pro"></td>
+            <td class="plan-compare-enterprise"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer-block">
+      <h2>Have questions about pricing? Contact Us.</h2>
+      <p><i class="flag-icon flag-icon-us"></i> &nbsp;&nbsp;&nbsp;+1-(111)-111-1111</p>
+      <p><i class="flag-icon flag-icon-in"></i> &nbsp;&nbsp;&nbsp;+91-222-222-2222</p>
+      <p><i class="fa fa-envelope"></i> &nbsp;&nbsp;&nbsp;sales@example.com</p>
+    </div>
+  </div>
+</body>
+</html>
